@@ -362,7 +362,7 @@ def eval_scib_metrics(
     )
 
     # remove nan value in result_dict
-    result_dict = {k: v for k, v in result_dict.items() if not np.isnan(v) and k!='ASW_label'}
+    result_dict = {k: v for k, v in result_dict.items() if not np.isnan(v)}
 
     return result_dict
 
