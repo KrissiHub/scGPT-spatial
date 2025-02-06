@@ -21,7 +21,7 @@ Special acknowledgement to the scGPT codebase - for environment setup please fol
 
 Check out our zero-shot inference [tutorial](https://github.com/bowang-lab/scGPT-spatial/tree/main/tutorials) on github! More code coming soon.
 
-### 🟪 Preprint 🟪
+### 🟪 Preprint and Citation 🟪
 
 Check out our preprint!
 
