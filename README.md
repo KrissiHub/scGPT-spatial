@@ -2,7 +2,7 @@
 
 ## 🟩 </ins>TL,DR Highlights 🟩
 
-✨ Spatial-omic foundation model ✨ ✨ Continual pretraining of scGPT on 30 million cells/spots ✨ 
+✨ Spatial-omic foundation model ✨ ✨ Continual pretraining of [scGPT](https://github.com/bowang-lab/scGPT) on 30 million cells/spots ✨ 
 
 
 ✨ Novel MoE (Mixture of Experts) decoders ✨ ✨ Spatially-aware sampling ✨ ✨ Neighborhood-based reconstruction objective ✨ 
