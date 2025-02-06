@@ -11,7 +11,7 @@
 ✨ Curation of *SpatialHuman30M* corpus ✨ ✨ Visium, Visium HD, Xenium, MERFISH ✨
 
 
-✨ Multi-modal and multi-slide Integration ✨ ✨ Cell-type deconvolution ✨ ✨ Missing gene imputation ✨
+✨ Multi-modal and multi-slide integration ✨ ✨ Cell-type deconvolution ✨ ✨ Missing gene imputation ✨
 
 
 ## 🟫 Model Weights 🟫
