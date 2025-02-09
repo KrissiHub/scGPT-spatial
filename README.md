@@ -1,4 +1,6 @@
-# scGPT-spatial: Continual Pretraining of Single-Cell Foundation Model for Spatial Transcriptomics
+# scGPT-spatial: Continual Pretraining of Single-Cell Foundation Model for Spatial Transcriptomics 
+
+[![Preprint](https://img.shields.io/badge/preprint-available-brightgreen)](https://www.biorxiv.org/content/10.1101/2025.02.05.636714v1) &nbsp;
 
 ## 🟩 </ins>TL,DR Highlights 🟩
 
@@ -29,6 +31,7 @@ Check out our zero-shot inference [tutorial](https://github.com/bowang-lab/scGPT
 
 ## 🟪 Preprint and Citation 🟪
 
-Check out our preprint!
+Check out our preprint! https://www.biorxiv.org/content/10.1101/2025.02.05.636714v1
+
 
 ![scGPT-spatial workflow](images/Fig1.png)
