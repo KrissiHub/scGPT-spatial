@@ -33,5 +33,15 @@ Check out our zero-shot inference [tutorial](https://github.com/bowang-lab/scGPT
 
 Check out our preprint! https://www.biorxiv.org/content/10.1101/2025.02.05.636714v1
 
+```bibtex
+@article{wang2025scgpt,
+  title={scGPT-spatial: Continual Pretraining of Single-Cell Foundation Model for Spatial Transcriptomics},
+  author={Wang, Chloe Xueqi and Cui, Haotian and Zhang, Andrew Hanzhuo and Xie, Ronald and Goodarzi, Hani and Wang, Bo},
+  journal={bioRxiv},
+  pages={2025--02},
+  year={2025},
+  publisher={Cold Spring Harbor Laboratory}
+}
+```
 
 ![scGPT-spatial workflow](images/Fig1.png)
