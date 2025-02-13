@@ -16,11 +16,11 @@
 ✨ Multi-modal and multi-slide integration ✨ ✨ Cell-type deconvolution ✨ ✨ Missing gene imputation ✨
 
 
-## 🟫 Model Weights 🟫
+## 🟧 Model Weights 🟧
 
 scGPT-spatial V1 weights on [figshare](https://figshare.com/articles/software/scGPT-spatial_V1_Model_Weights/28356068?file=52163879).
 
-## 🟧 SpatialHuman30M 🟧
+## 🟫 SpatialHuman30M 🟫
 Pretraining dataset names, slide metadata, and access links are summarized in [data source table](https://figshare.com/articles/dataset/Pretraining_Data_Sources_for_SpatialHuman30M/28405961?file=52318895). Processed data will be available upon publication given permission under license of the original data source.
 
 ## 🟦 Setup and Tutorials 🟦
