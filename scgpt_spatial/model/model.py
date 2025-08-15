@@ -10,7 +10,7 @@ import torch.distributed as dist
 import torch.nn.functional as F
 from torch.nn import TransformerEncoder, TransformerEncoderLayer
 from torch.distributions import Bernoulli
-from flash_attn.flash_attention import FlashMHA
+#from flash_attn.flash_attention import FlashMHA
 from tqdm import trange
 
 from .grad_reverse import grad_reverse

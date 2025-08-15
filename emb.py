@@ -5,6 +5,7 @@ from sklearn.cluster import KMeans
 from scipy.sparse import csr_matrix
 import scgpt_spatial
 
+
 warnings.filterwarnings('ignore')
 
 adata = sc.read_visium(path="/content/scGPT-spatial/data/sample_1/filtered_feature_bc_matrix", count_file="matrix.h5")
@@ -25,7 +26,7 @@ ref_embed_adata = scgpt_spatial.tasks.embed_data(
     gene_col=gene_col,
     obs_to_save=None,
     batch_size=64,
-    return_new_adata=True,
+    return_new_adata=False,
     use_fast_transformer=False
 )
 
@@ -34,4 +35,6 @@ kmeans = KMeans(n_clusters=7).fit(ref_embed_adata.obsm["X_scGPT"])
 ref_embed_adata.obs['scGPT_cluster'] = kmeans.labels_.astype(str)
 
 # Visualize in spatial context
-sc.pl.spatial(ref_embed_adata, color='scGPT_cluster', spot_size=1.2)
+
+sc.settings.figdir = "/content/scGPT-spatial"
+sc.pl.spatial(ref_embed_adata, color='scGPT_cluster', spot_size=50, save="/figure_2c.png")
