@@ -7,7 +7,7 @@ import scgpt_spatial
 
 warnings.filterwarnings('ignore')
 
-adata = sc.read_visium(path="data/sample_1/filtered_feature_bc_matrix", count_file="matrix.h5")
+adata = sc.read_visium(path="/content/scGPT-spatial/data/sample_1/filtered_feature_bc_matrix", count_file="matrix.h5")
 adata.X = adata.X.toarray()
 
 adata.var_names_make_unique()
@@ -16,7 +16,7 @@ sc.pp.filter_genes(adata, min_cells=3)
 coords = adata.obsm['spatial']
 expr = adata.X.toarray() if not isinstance(adata.X, np.ndarray) else adata.X
 
-model_dir = 'scGPT-spatial/scGPT_spatial_v1'
+model_dir = '/content/scGPT-spatial/scGPT_spatial_v1'
 gene_col = 'index'
 
 ref_embed_adata = scgpt_spatial.tasks.embed_data(
