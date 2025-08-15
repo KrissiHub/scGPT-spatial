@@ -1,6 +1,6 @@
 from .model import (
     TransformerModel,
-    FlashTransformerEncoderLayer,
+    #FlashTransformerEncoderLayer,
     GeneEncoder,
     AdversarialDiscriminator,
     MVCDecoder,
