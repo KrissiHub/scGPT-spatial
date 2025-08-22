@@ -7,9 +7,15 @@ import scgpt_spatial
 
 warnings.filterwarnings('ignore')
 
+np.float = float
+np.int = int
+np.bool = bool
+np.object = object
+np.complex = complex
+
 #Multiple samples must be concatenated to take all the data into account
 base_path = "/content/scGPT-spatial/data"
-sample_dirs = [f"{base_path}/sample_{i}/filtered_feature_bc_matrix" for i in range(1,7)]
+sample_dirs = [f"{base_path}/sample_{i}/filtered_feature_bc_matrix" for i in range(1,13)]
 
 adata = []
 
@@ -26,7 +32,7 @@ adata = sc.concat(
     adata,
     join="outer",
     label="sample",
-    keys=[f"sample_{i}" for i in range(1, 7)],
+    keys=[f"sample_{i}" for i in range(1, 13)],
     index_unique="-",          
     merge="same",              
     fill_value=0
