@@ -5,17 +5,37 @@ from sklearn.cluster import KMeans
 from scipy.sparse import csr_matrix
 import scgpt_spatial
 
-
 warnings.filterwarnings('ignore')
 
-adata = sc.read_visium(path="/content/scGPT-spatial/data/sample_1/filtered_feature_bc_matrix", count_file="matrix.h5")
-adata.X = adata.X.toarray()
+#Multiple samples must be concatenated to take all the data into account
+base_path = "/content/scGPT-spatial/data"
+sample_dirs = [f"{base_path}/sample_{i}/filtered_feature_bc_matrix" for i in range(1,7)]
 
-adata.var_names_make_unique()
+adata = []
+
+for i, p in enumerate(sample_dirs, start=1):
+    ad = sc.read_visium(path=p, count_file="matrix.h5")
+    ad.var_names_make_unique()
+
+    ad.obs["sample"] = f"sample_{i}"
+
+    adata.append(ad)
+
+#Concat the samples
+adata = sc.concat(
+    adata,
+    join="outer",
+    label="sample",
+    keys=[f"sample_{i}" for i in range(1, 7)],
+    index_unique="-",          
+    merge="same",              
+    fill_value=0
+)
+
+adata.X = adata.X.toarray()
 sc.pp.filter_genes(adata, min_cells=3) 
 
 coords = adata.obsm['spatial']
-expr = adata.X.toarray() if not isinstance(adata.X, np.ndarray) else adata.X
 
 model_dir = '/content/scGPT-spatial/scGPT_spatial_v1'
 gene_col = 'index'

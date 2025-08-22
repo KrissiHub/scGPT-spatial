@@ -1,4 +1,4 @@
 scanpy
-torchtext==0.17.0
+torchtext==0.17.2
 scib
-numpy==1.26.1
+numpy==1.26.4
