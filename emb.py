@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.cluster import KMeans
 from scipy.sparse import csr_matrix
 import scgpt_spatial
+from sys import exit
 
 warnings.filterwarnings('ignore')
 
@@ -15,7 +16,7 @@ np.complex = complex
 
 #Multiple samples must be concatenated to take all the data into account
 base_path = "/content/scGPT-spatial/data"
-sample_dirs = [f"{base_path}/sample_{i}/filtered_feature_bc_matrix" for i in range(1,13)]
+sample_dirs = [f"{base_path}/sample_{i}/filtered_feature_bc_matrix" for i in range(1,10)]
 
 adata = []
 
@@ -32,7 +33,7 @@ adata = sc.concat(
     adata,
     join="outer",
     label="sample",
-    keys=[f"sample_{i}" for i in range(1, 13)],
+    keys=[f"sample_{i}" for i in range(1, 10)],
     index_unique="-",          
     merge="same",              
     fill_value=0
@@ -46,15 +47,18 @@ coords = adata.obsm['spatial']
 model_dir = '/content/scGPT-spatial/scGPT_spatial_v1'
 gene_col = 'index'
 
-ref_embed_adata = scgpt_spatial.tasks.embed_data(
-    adata,
-    model_dir,
-    gene_col=gene_col,
-    obs_to_save=None,
-    batch_size=64,
-    return_new_adata=False,
-    use_fast_transformer=False
-)
+try:
+    ref_embed_adata = scgpt_spatial.tasks.embed_data(
+        adata,
+        model_dir,
+        gene_col=gene_col,
+        obs_to_save=None,
+        batch_size=64,
+        return_new_adata=False,
+        use_fast_transformer=False
+    )
+except:
+    exit(0)
 
 # Cluster 
 kmeans = KMeans(n_clusters=7).fit(ref_embed_adata.obsm["X_scGPT"])
